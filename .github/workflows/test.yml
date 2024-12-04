@@ -33,6 +33,3 @@ jobs:
 
       - name: Try to run executable
         run:  test/test.exe
-
-      - name: Checkout repository
-        uses: actions/checkout@v4
