@@ -8,11 +8,19 @@ on:
 
   workflow_dispatch:
 
+defaults:
+
+  run:
+
+    shell: bash
+
 jobs:
 
-  test:
+  check_compiler_availability:
 
     runs-on: ubuntu-latest
+
+    timeout-minutes: 1
 
     steps:
 
@@ -28,8 +36,27 @@ jobs:
                 echo "g++-10 is installed"
               fi
 
+  execute_test:
+
+    strategy:
+
+      matrix:
+
+        file: [non_uniform_random_bit_generator, std_mt19937]
+
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 1
+
+    needs: [check_compiler_availability]
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Try to compile
-        run:  g++-10 -std=gnu++20 -O0 -g -rdynamic test/test.cpp -o test/test.exe
+        run:  g++-10 -std=gnu++20 -O0 -g -rdynamic test/${{ matrix.file }}.cpp -o test/${{ matrix.file }}.exe
 
       - name: Try to run executable
-        run:  test/test.exe
+        run:  test/${{ matrix.file }}.exe

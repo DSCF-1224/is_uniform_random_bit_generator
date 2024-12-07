@@ -21,11 +21,5 @@ int main(void)
     }
 
 
-    if ( IsUniformRandomBitGenerator<non_uniform_random_bit_generator>() )
-    {
-        return EXIT_FAILURE;
-    }
-
-
     return EXIT_SUCCESS;
 }
