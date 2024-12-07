@@ -18,7 +18,7 @@ namespace is_uniform_random_bit_generator
 /// @note C++20 must be required for this function to work
 /// @note https://cpprefjp.github.io/reference/random/uniform_random_bit_generator.html
 template<std::uniform_random_bit_generator G>
-static constexpr bool IsUniformRandomBitGenerator(void)
+static constexpr bool AsBoolean(void)
 {
     return true;
 }
@@ -30,7 +30,7 @@ static constexpr bool IsUniformRandomBitGenerator(void)
 /// @note C++20 must be required for this function to work
 /// @note https://cpprefjp.github.io/reference/random/uniform_random_bit_generator.html
 template<typename G>
-static constexpr bool IsUniformRandomBitGenerator(void)
+static constexpr bool AsBoolean(void)
 {
     return false;
 }

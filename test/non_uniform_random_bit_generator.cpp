@@ -15,7 +15,7 @@ int main(void)
     using namespace is_uniform_random_bit_generator;
 
 
-    if ( IsUniformRandomBitGenerator<non_uniform_random_bit_generator>() )
+    if ( AsBoolean<non_uniform_random_bit_generator>() )
     {
         return EXIT_FAILURE;
     }

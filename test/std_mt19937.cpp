@@ -15,7 +15,7 @@ int main(void)
     using namespace is_uniform_random_bit_generator;
 
 
-    if ( !IsUniformRandomBitGenerator<std::mt19937>() )
+    if ( !AsBoolean<std::mt19937>() )
     {
         return EXIT_FAILURE;
     }
