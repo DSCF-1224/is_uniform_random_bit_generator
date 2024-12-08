@@ -15,6 +15,7 @@ namespace is_uniform_random_bit_generator
 /// @brief Checks if the given type is `std::uniform_random_bit_generator`
 /// @tparam G A type that should satisfy the `std::uniform_random_bit_generator` concept
 /// @return `true` if `G` is `std::uniform_random_bit_generator`.
+/// @return `false` if `G` is NOT `std::uniform_random_bit_generator`.
 /// @note C++20 must be required for this function to work
 /// @note https://cpprefjp.github.io/reference/random/uniform_random_bit_generator.html
 template<std::uniform_random_bit_generator G>
@@ -24,11 +25,6 @@ static constexpr bool AsBoolean(void)
 }
 
 
-/// @brief Checks if the given type is `std::uniform_random_bit_generator`
-/// @tparam G A type that should satisfy the `std::uniform_random_bit_generator` concept
-/// @return `false` if `G` is NOT `std::uniform_random_bit_generator`.
-/// @note C++20 must be required for this function to work
-/// @note https://cpprefjp.github.io/reference/random/uniform_random_bit_generator.html
 template<typename G>
 static constexpr bool AsBoolean(void)
 {
